@@ -6,23 +6,31 @@ public class App {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
-        int numeroSecreto = random.nextInt(1, 20) ; 
+        int numeroSecreto = random.nextInt(1, 20);
         int tentativas = 0;
         int chute;
-         System.out.println("Jogo da adivinhação");
+        System.out.println("Jogo da adivinhação");
         System.out.println("Digite um número entre 1 e 20");
         do {
             System.out.print("Digite um número: ");
             chute = sc.nextInt();
             tentativas++;
             if (chute < numeroSecreto) {
-                System.out.println("O número secreto é maior.");
+                if (chute < 1) {
+                    System.out.println("O número secreto deve ser entre 1 e 20!");
+                } else {
+                    System.out.println("O número secreto é maior.");
+                }
             } else if (chute > numeroSecreto) {
-                System.out.println("O número secreto é menor.");
+                if (chute > 20) {
+                    System.out.println("O número secreto deve ser entre 1 e 20!");
+                } else {
+                    System.out.println("O número secreto é menor.");
+                }
             } else {
                 System.out.println("Você acertou o número em " + tentativas + " tentativas.");
             }
-        } while (chute != numeroSecreto );
+        } while (chute != numeroSecreto);
 
         sc.close();
     }
