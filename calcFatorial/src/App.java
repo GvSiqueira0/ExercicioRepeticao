@@ -1,9 +1,12 @@
 public class App {
     public static void main(String[] args) throws Exception {
-        long fatorial = 1;
-        for (int i = 1; i <= 10; i++) {
-            fatorial = fatorial * i;
+        int fatorial = 10;
+        int resultado = 1;
+
+        for (int i = fatorial; i > 1; i--) {
+            resultado *= i;
         }
-        System.out.println(fatorial);
+
+        System.out.println("Resultado final: " + resultado);
     }
 }
